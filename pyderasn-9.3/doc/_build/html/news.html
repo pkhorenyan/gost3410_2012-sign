@@ -1,0 +1,703 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>News &#8212; pyderasn 9.3 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install" href="install.html" />
+    <link rel="prev" title="Library reference" href="reference.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="Install"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reference.html" title="Library reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyderasn 9.3 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="news">
+<h1>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="section-1">
+<span id="release9-3"></span><h2>9.3<a class="headerlink" href="#section-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>CommonString’s <code class="docutils literal"><span class="pre">.memoryview()</span></code> raises ValueError now for
+friendliness with linters</li>
+</ul>
+</div>
+<div class="section" id="section-2">
+<span id="release9-2"></span><h2>9.2<a class="headerlink" href="#section-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">keep_memoryview</span></code> context option appeared, respected by OctetString
+and Any objects during DER decoding. If set, then their internal
+values will keep memoryview reference instead of full bytes copy</li>
+<li>Correspondingly OctetString and Any have <code class="docutils literal"><span class="pre">.memoryview()</span></code> method</li>
+</ul>
+</div>
+<div class="section" id="section-3">
+<span id="release9-1"></span><h2>9.1<a class="headerlink" href="#section-3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">.totzdatetime()</span></code> appeared in UTCTime and GeneralizedTime,
+explicitly setting UTC timezone information.
+Optional <code class="docutils literal"><span class="pre">dateutils.tz</span></code> library is required for that</li>
+</ul>
+</div>
+<div class="section" id="section-4">
+<span id="release9-0"></span><h2>9.0<a class="headerlink" href="#section-4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Drop Python 2.7 support. No <code class="docutils literal"><span class="pre">six</span></code> dependency anymore</li>
+</ul>
+</div>
+<div class="section" id="section-5">
+<span id="release8-4"></span><h2>8.4<a class="headerlink" href="#section-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix previous release’s style breaking in ASN.1 browser</li>
+</ul>
+</div>
+<div class="section" id="section-6">
+<span id="release8-3"></span><h2>8.3<a class="headerlink" href="#section-6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Append offsets to tree elements in ASN.1 browser for ease of navigation</li>
+</ul>
+</div>
+<div class="section" id="section-7">
+<span id="release8-2"></span><h2>8.2<a class="headerlink" href="#section-7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Trivial documentation fixes</li>
+</ul>
+</div>
+<div class="section" id="section-8">
+<span id="release8-1"></span><h2>8.1<a class="headerlink" href="#section-8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Workability under Microsoft Windows OS should be restored: it has
+different <code class="docutils literal"><span class="pre">mmap</span></code> constants and implementation, preventing
+<code class="docutils literal"><span class="pre">pyderasn</span></code> importing</li>
+</ul>
+</div>
+<div class="section" id="section-9">
+<span id="release8-0"></span><h2>8.0<a class="headerlink" href="#section-9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Incompatible</strong> change: explicitly check that only naive datetime
+objects are used for UTCTime and GeneralizedTime, raise an error
+otherwise. Previously they silently ignored <code class="docutils literal"><span class="pre">tzinfo</span></code></li>
+</ul>
+</div>
+<div class="section" id="section-10">
+<span id="release7-7"></span><h2>7.7<a class="headerlink" href="#section-10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Strictly check that tag’s long encoded form does not contain leading zero
+(X.690 8.1.2.4.2 (c))</li>
+<li>Strictly check that tag’s long form is used in expected way for small values
+(X.690 8.1.2.2)</li>
+</ul>
+</div>
+<div class="section" id="section-11">
+<span id="release7-6"></span><h2>7.6<a class="headerlink" href="#section-11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Proper strict alphabet validation of VisibleString</li>
+<li>VisibleString and IA5String also have <code class="docutils literal"><span class="pre">allowable_chars</span></code> property</li>
+<li>Fixed TeletexString, T61String use <code class="docutils literal"><span class="pre">iso-8859-1</span></code> encoding (instead of
+<code class="docutils literal"><span class="pre">ascii</span></code>), because they are 8-bit encodings</li>
+</ul>
+</div>
+<div class="section" id="section-12">
+<span id="release7-5"></span><h2>7.5<a class="headerlink" href="#section-12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Also print full TLVlen in ASN.1 browser</li>
+</ul>
+</div>
+<div class="section" id="section-13">
+<span id="release7-4"></span><h2>7.4<a class="headerlink" href="#section-13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix DEFINED BY pprinting when invoking as __main__ module</li>
+<li>Integer has <code class="docutils literal"><span class="pre">tohex()</span></code> for getting hexadecimal representation of its value</li>
+<li><code class="docutils literal"><span class="pre">hexdump()</span></code> (<code class="docutils literal"><span class="pre">hexdump</span> <span class="pre">-C</span></code> like output) and <code class="docutils literal"><span class="pre">ascii_visualize()</span></code>
+(visualize ASCII printable characters, like in <code class="docutils literal"><span class="pre">hexdump</span> <span class="pre">-C</span></code>) pretty
+printing functions appeared</li>
+<li>Experimental ASN.1 interactive terminal browser (<code class="docutils literal"><span class="pre">--browse</span></code> and
+<code class="docutils literal"><span class="pre">pyderasn.browse</span></code>).
+You will need <a class="reference external" href="http://urwid.org/">urwid package</a> to use it</li>
+</ul>
+</div>
+<div class="section" id="section-14">
+<span id="release7-3"></span><h2>7.3<a class="headerlink" href="#section-14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>SEQUENCE/SET fully performs default value existence validation in
+evgen mode, by the cost of DEFAULTed value full decoding. That should
+not be the problem, as DEFAULTs are relatively small in practice. Now
+evgen mode has the same DER validation strictness as an ordinary one</li>
+</ul>
+</div>
+<div class="section" id="section-15">
+<span id="release7-2"></span><h2>7.2<a class="headerlink" href="#section-15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Restored workability of some command line options</li>
+<li>2-pass DER encoding mode with very little memory footprint</li>
+</ul>
+</div>
+<div class="section" id="section-16">
+<span id="release7-1"></span><h2>7.1<a class="headerlink" href="#section-16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>README updating</li>
+</ul>
+</div>
+<div class="section" id="section-17">
+<span id="release7-0"></span><h2>7.0<a class="headerlink" href="#section-17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed invalid behaviour where SET OF allowed multiple objects with the
+same tag to be successfully decoded</li>
+<li>Fixed possibly invalid SET DER encoding where objects were not sorted
+by tag, but by encoded representation</li>
+<li><code class="docutils literal"><span class="pre">Any</span></code> does not allow empty data value now. Now it checks if it has
+valid ASN.1 tag</li>
+<li><code class="docutils literal"><span class="pre">SetOf</span></code> is not treated as ready, if no value was set and minimum
+bounds are greater than zero</li>
+<li><code class="docutils literal"><span class="pre">Any</span></code> allows an ordinary <code class="docutils literal"><span class="pre">Obj</span></code> storing, without its forceful
+encoded representation storage. That is required for CER encoding
+mode, where we do not know in advance what encoding will be used</li>
+<li><code class="docutils literal"><span class="pre">ObjectIdentifier</span></code> stores values as C unsigned long integer,
+forbidding storage of huge integers, that must not be a problem in
+practice</li>
+<li>Initial support for so called <code class="docutils literal"><span class="pre">evgen_mode</span></code>: event generation mode,
+where no in-memory objects storing happens, giving ability to process
+ASN.1 data without fully parsing it first. <code class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pyderasn</span></code> has
+<code class="docutils literal"><span class="pre">--evgen</span></code> mode switcher</li>
+<li>Useful <code class="docutils literal"><span class="pre">agg_octet_string</span></code> that is able to streamingly decode string
+from events of <code class="docutils literal"><span class="pre">evgen_mode</span></code>, allowing strings retrieving without
+copying them to memory first</li>
+<li>Initial experimental CER encoding mode, allowing streaming encoding of
+the data directly to some writeable object</li>
+<li>Ability to use mmap-ed memoryviews to skip files loading to memory</li>
+<li>Ability to use memoryview as an input for *Strings. If they are
+mmap-ed, then you can encode any quantities of data streamingly
+without copying to memory</li>
+</ul>
+</div>
+<div class="section" id="section-18">
+<span id="release6-3"></span><h2>6.3<a class="headerlink" href="#section-18" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed workability under Python 3.5. Previously only 2.7 and 3.6
+versions were tested</li>
+</ul>
+</div>
+<div class="section" id="section-19">
+<span id="release6-2"></span><h2>6.2<a class="headerlink" href="#section-19" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python <code class="docutils literal"><span class="pre">int()</span></code>’s accepts even more various non-decimal characters
+than expected. Make validation fully strict in UTCTime and
+GeneralizedTime, without relying on <code class="docutils literal"><span class="pre">int()</span></code></li>
+</ul>
+</div>
+<div class="section" id="section-20">
+<span id="release6-1"></span><h2>6.1<a class="headerlink" href="#section-20" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>UTCTime and GeneralizedTime allowed values to have plus sign in them,
+passing <code class="docutils literal"><span class="pre">int()</span></code> check successfully. Prohibit that incorrect behaviour</li>
+<li>UTCTime and GeneralizedTime BER decoding support</li>
+<li>Faster UTCTime and GeneralizedTime decoding, and slightly better
+overall performance</li>
+<li>Workability under Cython</li>
+<li>Explicitly Check that all ObjectIdentifier arcs are non-negative</li>
+</ul>
+</div>
+<div class="section" id="section-21">
+<span id="release6-0"></span><h2>6.0<a class="headerlink" href="#section-21" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">.copy()</span></code> method removed: <code class="docutils literal"><span class="pre">copy.copy()</span></code> is preferred way to copy
+objects now</li>
+<li>Copies made previously with <code class="docutils literal"><span class="pre">.copy()</span></code> lacked <code class="docutils literal"><span class="pre">.defined</span></code> field,
+now they are not</li>
+<li>All objects are friendly to <code class="docutils literal"><span class="pre">pickle</span></code> libraries</li>
+<li>PrintableString has <code class="docutils literal"><span class="pre">allow_asterisk</span></code> and <code class="docutils literal"><span class="pre">allow_ampersand</span></code>
+properties</li>
+<li><code class="docutils literal"><span class="pre">.hexencode()</span></code>, <code class="docutils literal"><span class="pre">.hexdecode()</span></code> and <code class="docutils literal"><span class="pre">.hexdecod()</span></code> methods
+appeared, working with hexadecimal encoded data</li>
+</ul>
+</div>
+<div class="section" id="section-22">
+<span id="release5-6"></span><h2>5.6<a class="headerlink" href="#section-22" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Convenient <code class="docutils literal"><span class="pre">.decod()</span></code> method, that raises if tail is not empty</li>
+<li>Control characters (like newlines) of text fields in pprinted output
+are escaped</li>
+<li>Ability to allow asterisk and ampersand characters
+(<code class="docutils literal"><span class="pre">allow_asterisk</span></code>, <code class="docutils literal"><span class="pre">allow_ampersand</span></code> kwargs) in PrintableString,
+that unfortunately could be met in X.509 certificates</li>
+</ul>
+</div>
+<div class="section" id="section-23">
+<span id="release5-5"></span><h2>5.5<a class="headerlink" href="#section-23" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>PEP-396 compatible module’s <code class="docutils literal"><span class="pre">__version__</span></code></li>
+</ul>
+</div>
+<div class="section" id="section-24">
+<span id="release5-4"></span><h2>5.4<a class="headerlink" href="#section-24" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Do not shadow underlying DecodeError during decoding of optional
+sequence’s field</li>
+</ul>
+</div>
+<div class="section" id="section-25">
+<span id="release5-3"></span><h2>5.3<a class="headerlink" href="#section-25" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Forbid any later GNU GPL version autousage (project’s licence now is
+GNU LGPLv3 only)</li>
+<li>Fix <code class="docutils literal"><span class="pre">defines_by_path</span></code> context option usage example</li>
+</ul>
+</div>
+<div class="section" id="section-26">
+<span id="release5-2"></span><h2>5.2<a class="headerlink" href="#section-26" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix fallbacked <code class="docutils literal"><span class="pre">colored()</span></code> function workability,
+if no <code class="docutils literal"><span class="pre">termcolor</span></code> is installed</li>
+</ul>
+</div>
+<div class="section" id="section-27">
+<span id="release5-1"></span><h2>5.1<a class="headerlink" href="#section-27" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix empty <code class="docutils literal"><span class="pre">--oids</span></code> workability</li>
+</ul>
+</div>
+<div class="section" id="section-28">
+<span id="release5-0"></span><h2>5.0<a class="headerlink" href="#section-28" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ability to specify multiple OID mappings for pprinted output
+(<code class="docutils literal"><span class="pre">oids</span></code> keyword argument is renamed to <code class="docutils literal"><span class="pre">oid_maps</span></code>)</li>
+</ul>
+</div>
+<div class="section" id="section-29">
+<span id="release4-9"></span><h2>4.9<a class="headerlink" href="#section-29" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Minor decode speed improvements</li>
+<li>Much faster UTCTime/GeneralizedTime decoders</li>
+<li>Stricter UTCTime/GeneralizedTime DER encoding check: trailing zeroes
+are forbidden</li>
+<li>Valid DER encoding of GeneralizedTime with microseconds: no trailing
+zeroes appended</li>
+</ul>
+</div>
+<div class="section" id="section-30">
+<span id="release4-7"></span><h2>4.7<a class="headerlink" href="#section-30" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ObjectIdentifier has <code class="docutils literal"><span class="pre">ber_encoded</span></code> set to True, if non-normalized
+arc encoding is met</li>
+<li>Preserve BER-related attributes during <code class="docutils literal"><span class="pre">copy()</span></code></li>
+</ul>
+</div>
+<div class="section" id="section-31">
+<span id="release4-6"></span><h2>4.6<a class="headerlink" href="#section-31" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added <a class="reference external" href="https://github.com/YuryStrozhevsky/asn1-test-suite">COMPLI</a>
+ASN.1:2008 test suite. PyDERASN passes it (except for REAL values),
+but it is more strict sometimes and aimed to be compliant with X.690-201508</li>
+<li>Check for arc values normalization in ObjectIdentifier.
+Forbid non-normalized in DER encoding</li>
+</ul>
+</div>
+<div class="section" id="section-32">
+<span id="release4-5"></span><h2>4.5<a class="headerlink" href="#section-32" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">ctx</span></code> parameter can be safely used in .decode() and won’t be muted</li>
+<li>PP nametuple contains reference to the ASN1Obj itself</li>
+<li><code class="docutils literal"><span class="pre">colonize_hex</span></code> function useful for pretty printing</li>
+<li>Integer values are also pretty printed in hexadecimal form</li>
+</ul>
+</div>
+<div class="section" id="section-33">
+<span id="release4-4"></span><h2>4.4<a class="headerlink" href="#section-33" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>All errors are inherited from ASN1Error class</li>
+<li>NumericString/PrintableString has <code class="docutils literal"><span class="pre">allowable_chars</span></code> property holding
+all allowed characters</li>
+</ul>
+</div>
+<div class="section" id="section-34">
+<span id="release4-3"></span><h2>4.3<a class="headerlink" href="#section-34" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix NumericString: space is allowed character</li>
+<li>Strict PrintableString sanitizing</li>
+</ul>
+</div>
+<div class="section" id="section-35">
+<span id="release4-2"></span><h2>4.2<a class="headerlink" href="#section-35" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Removed <code class="docutils literal"><span class="pre">lenindef</span></code>, <code class="docutils literal"><span class="pre">ber_encoded</span></code> attributes from the Choice –
+they must be taken from underlying value, as Choice does not have its
+own encoding</li>
+<li>Do not yield extra EOC PP for Any, having indefinite length encoding
+and containing autodecoded DEFINED BY value</li>
+</ul>
+</div>
+<div class="section" id="section-36">
+<span id="release4-1"></span><h2>4.1<a class="headerlink" href="#section-36" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">bered</span></code> attribute, meaning if object has BER-specific encoding, is
+renamed to <code class="docutils literal"><span class="pre">ber_encoded</span></code></li>
+<li><code class="docutils literal"><span class="pre">bered</span></code> attribute is replace with property showing if any of
+underlying values are BER-encoded. If value has length indefinite
+encoded explicit tag, value, if value contains BER-related encoding,
+or if it contains other objects that are <code class="docutils literal"><span class="pre">bered</span></code>, then it is <code class="docutils literal"><span class="pre">bered</span></code></li>
+</ul>
+</div>
+<div class="section" id="section-37">
+<span id="release4-0"></span><h2>4.0<a class="headerlink" href="#section-37" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Default value is checked also for Sets, not for Sequences only</li>
+<li><strong>Incompatible</strong> change: defaulted values in Sequence/Set are always
+strictly checked, unless <code class="docutils literal"><span class="pre">allow_default_values</span></code> context option is
+set. <code class="docutils literal"><span class="pre">strict_default_existence</span></code> option disappeared</li>
+<li>Strict Set/Set Of’s values ordering check</li>
+</ul>
+</div>
+<div class="section" id="section-38">
+<span id="release3-14"></span><h2>3.14<a class="headerlink" href="#section-38" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Additional encoding validness check: explicit tag must contain exactly
+one object inside. Throw DecodeError otherwise</li>
+<li><code class="docutils literal"><span class="pre">allow_expl_oob</span></code> context and command-line options allow skipping of
+that check</li>
+</ul>
+</div>
+<div class="section" id="section-39">
+<span id="release3-13"></span><h2>3.13<a class="headerlink" href="#section-39" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>DecodeError’s decode paths are separated with <code class="docutils literal"><span class="pre">:</span></code>, instead of <code class="docutils literal"><span class="pre">.</span></code>,
+because of colliding with dots in OIDs</li>
+<li>Ability to print element decode paths with <code class="docutils literal"><span class="pre">--print-decode-path</span></code>
+command line option (and corresponding keyword argument)</li>
+<li>Ability to print tree’s branch specified with <code class="docutils literal"><span class="pre">--decode-path-only</span></code></li>
+</ul>
+</div>
+<div class="section" id="section-40">
+<span id="release3-12"></span><h2>3.12<a class="headerlink" href="#section-40" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix possible uncaught TypeError in Py2 with zero bytes inside the value</li>
+<li>Fix SequenceOf/SetOf raising BoundsError instead of DecodeError</li>
+</ul>
+</div>
+<div class="section" id="section-41">
+<span id="release3-11"></span><h2>3.11<a class="headerlink" href="#section-41" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix uncaught UTCTime/GeneralizedTime decode error when dealing with
+non ASCII-encoded values</li>
+</ul>
+</div>
+<div class="section" id="section-42">
+<span id="release3-10"></span><h2>3.10<a class="headerlink" href="#section-42" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix long-standing bug with explicitly tagged objects inside the
+Choice. If Choice had explicitly tagged value, then its <code class="docutils literal"><span class="pre">.tlvlen</span></code>
+reports the size without taking value’s explicit tag in advance</li>
+<li>Add <code class="docutils literal"><span class="pre">.fulllen</span></code> and <code class="docutils literal"><span class="pre">.fulloffset</span></code> properties for all objects</li>
+</ul>
+</div>
+<div class="section" id="section-43">
+<span id="release3-9"></span><h2>3.9<a class="headerlink" href="#section-43" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">SEQUENCE’s values are printed with field’s name. Previously there was
+the following output:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">AlgorithmIdentifier</span> <span class="n">SEQUENCE</span><span class="p">[</span><span class="n">OBJECT</span> <span class="n">IDENTIFIER</span> <span class="mf">1.3.14.3.2.26</span><span class="p">,</span> <span class="p">[</span><span class="n">UNIV</span> <span class="mi">5</span><span class="p">]</span> <span class="n">ANY</span> <span class="mi">0500</span> <span class="n">OPTIONAL</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>now it is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">AlgorithmIdentifier</span> <span class="n">SEQUENCE</span><span class="p">[</span><span class="n">algorithm</span><span class="p">:</span> <span class="n">OBJECT</span> <span class="n">IDENTIFIER</span> <span class="mf">1.3.14.3.2.26</span><span class="p">;</span> <span class="n">parameters</span><span class="p">:</span> <span class="p">[</span><span class="n">UNIV</span> <span class="mi">5</span><span class="p">]</span> <span class="n">ANY</span> <span class="mi">0500</span> <span class="n">OPTIONAL</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Fixed EOC (Unicode character) repr printing issues under Python2</p>
+</li>
+</ul>
+</div>
+<div class="section" id="section-44">
+<span id="release3-8"></span><h2>3.8<a class="headerlink" href="#section-44" title="Permalink to this headline">¶</a></h2>
+<p>BER’s EOC is explicitly shown during pprinting. Following notation:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">15</span><span class="o">-</span><span class="mi">2</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1576</span><span class="p">]</span><span class="o">-</span><span class="mi">4</span>  <span class="o">.</span> <span class="n">content</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="n">EXPLICIT</span> <span class="p">[</span><span class="n">UNIV</span> <span class="mi">16</span><span class="p">]</span> <span class="n">ANY</span>
+</pre></div>
+</div>
+<p>is replaced with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  15-2∞ [0,0,1576]∞  . content: [0] EXPLICIT [UNIV 16] ANY
+[...]
+1587    [1,1,   0]   . content:  BER EOC
+1589    [1,1,   0]   . content: EXPLICIT BER EOC
+</pre></div>
+</div>
+</div>
+<div class="section" id="section-45">
+<span id="release3-7"></span><h2>3.7<a class="headerlink" href="#section-45" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>BER decoding support</li>
+<li>BitString’s ‘’H notation support</li>
+<li><code class="docutils literal"><span class="pre">termcolor</span></code> package is included in the tarball</li>
+</ul>
+</div>
+<div class="section" id="section-46">
+<span id="release3-6"></span><h2>3.6<a class="headerlink" href="#section-46" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ability to set values during Sequence initialization</li>
+</ul>
+</div>
+<div class="section" id="section-47">
+<span id="release3-5"></span><h2>3.5<a class="headerlink" href="#section-47" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix TagMismatch exception completeness during Choice and Set decoding.
+Previously we will loose offset and decode_path information about
+concrete TagMismatched entity</li>
+</ul>
+</div>
+<div class="section" id="section-48">
+<span id="release3-4"></span><h2>3.4<a class="headerlink" href="#section-48" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Strict NumericString’s value sanitation</li>
+<li>Invalid encoding in string types will raise <code class="docutils literal"><span class="pre">DecodeError</span></code> exception,
+instead of <code class="docutils literal"><span class="pre">Unicode*Error</span></code></li>
+<li>Fixed DecodePathDefBy workability with Python 2.x</li>
+</ul>
+</div>
+<div class="section" id="section-49">
+<span id="release3-3"></span><h2>3.3<a class="headerlink" href="#section-49" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix nasty BitString decoding bug: it could fail when data follows
+encoded BitString value. There weren’t any problems when BitString is
+at the end of Sequence</li>
+</ul>
+</div>
+<div class="section" id="section-50">
+<span id="release3-2"></span><h2>3.2<a class="headerlink" href="#section-50" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Slightly corrected colours, now visible on white background</li>
+</ul>
+</div>
+<div class="section" id="section-51">
+<span id="release3-1"></span><h2>3.1<a class="headerlink" href="#section-51" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix bug related to DecodeError showing with DecodePathDefBy entities</li>
+<li>Respect <code class="docutils literal"><span class="pre">NO_COLOR</span></code> environment variable</li>
+</ul>
+</div>
+<div class="section" id="section-52">
+<span id="release3-0"></span><h2>3.0<a class="headerlink" href="#section-52" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="xref py py-func docutils literal"><span class="pre">pyderasn.decode_path_defby()</span></code> is replaced with
+<code class="xref py py-class docutils literal"><span class="pre">pyderasn.DecodePathDefBy</span></code></li>
+<li>Ability to turn colourized terminal output by calling
+<code class="docutils literal"><span class="pre">pprint(...,</span> <span class="pre">with_colours=True)</span></code>. You will need
+<a class="reference external" href="https://pypi.org/project/termcolor/">termcolor package</a></li>
+</ul>
+</div>
+<div class="section" id="section-53">
+<span id="release2-1"></span><h2>2.1<a class="headerlink" href="#section-53" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed invalid offset calculation when dealing with DEFINED BY objects
+having explicit tags</li>
+</ul>
+</div>
+<div class="section" id="section-54">
+<span id="release2-0"></span><h2>2.0<a class="headerlink" href="#section-54" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>BIT STRINGs can also be <a class="reference internal" href="reference.html#definedby"><span class="std std-ref">DEFINED BY</span></a></li>
+<li>Decoding process can be governed with optional <a class="reference internal" href="reference.html#ctx"><span class="std std-ref">ctx</span></a>
+keyword argument to <code class="docutils literal"><span class="pre">decode()</span></code> method</li>
+<li><a class="reference internal" href="reference.html#defines-by-path-ctx"><span class="std std-ref">defines_by_path</span></a> option is now
+<a class="reference internal" href="reference.html#ctx"><span class="std std-ref">decode context</span></a> option, not a keyword argument</li>
+<li>Ability to do <code class="docutils literal"><span class="pre">strict</span> <span class="pre">validation</span></code>
+of defaulted values met in sequence, raising an exception</li>
+</ul>
+</div>
+<div class="section" id="section-55">
+<span id="release1-6"></span><h2>1.6<a class="headerlink" href="#section-55" title="Permalink to this headline">¶</a></h2>
+<p>Ability to skip specified number of bytes (<code class="docutils literal"><span class="pre">--skip</span></code>) in command line
+utility.</p>
+</div>
+<div class="section" id="section-56">
+<span id="release1-5"></span><h2>1.5<a class="headerlink" href="#section-56" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Generic decoder’s schema and pretty printer
+(<code class="xref py py-func docutils literal"><span class="pre">pyderasn.generic_decoder()</span></code>) can be used in libraries</li>
+<li>Ability to specify <a class="reference internal" href="reference.html#defines-by-path-ctx"><span class="std std-ref">defines_by_path</span></a>
+during command line invocation</li>
+</ul>
+</div>
+<div class="section" id="section-57">
+<span id="release1-4"></span><h2>1.4<a class="headerlink" href="#section-57" title="Permalink to this headline">¶</a></h2>
+<p>Ability to automatically decode <a class="reference internal" href="reference.html#definedby"><span class="std std-ref">DEFINED BY</span></a> fields
+inside SEQUENCEs.</p>
+</div>
+<div class="section" id="section-58">
+<span id="release1-3"></span><h2>1.3<a class="headerlink" href="#section-58" title="Permalink to this headline">¶</a></h2>
+<p>Removed <code class="docutils literal"><span class="pre">__lt__</span></code>/<code class="docutils literal"><span class="pre">__eq__</span></code> from base class, as pylint likes it.</p>
+</div>
+<div class="section" id="section-59">
+<span id="release1-2"></span><h2>1.2<a class="headerlink" href="#section-59" title="Permalink to this headline">¶</a></h2>
+<p>Full rich comparison operators added.</p>
+</div>
+<div class="section" id="section-60">
+<span id="release1-1"></span><h2>1.1<a class="headerlink" href="#section-60" title="Permalink to this headline">¶</a></h2>
+<p>Trivial README addition.</p>
+</div>
+<div class="section" id="section-61">
+<span id="release1-0"></span><h2>1.0<a class="headerlink" href="#section-61" title="Permalink to this headline">¶</a></h2>
+<p>Initial release.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">News</a><ul>
+<li><a class="reference internal" href="#section-1">9.3</a></li>
+<li><a class="reference internal" href="#section-2">9.2</a></li>
+<li><a class="reference internal" href="#section-3">9.1</a></li>
+<li><a class="reference internal" href="#section-4">9.0</a></li>
+<li><a class="reference internal" href="#section-5">8.4</a></li>
+<li><a class="reference internal" href="#section-6">8.3</a></li>
+<li><a class="reference internal" href="#section-7">8.2</a></li>
+<li><a class="reference internal" href="#section-8">8.1</a></li>
+<li><a class="reference internal" href="#section-9">8.0</a></li>
+<li><a class="reference internal" href="#section-10">7.7</a></li>
+<li><a class="reference internal" href="#section-11">7.6</a></li>
+<li><a class="reference internal" href="#section-12">7.5</a></li>
+<li><a class="reference internal" href="#section-13">7.4</a></li>
+<li><a class="reference internal" href="#section-14">7.3</a></li>
+<li><a class="reference internal" href="#section-15">7.2</a></li>
+<li><a class="reference internal" href="#section-16">7.1</a></li>
+<li><a class="reference internal" href="#section-17">7.0</a></li>
+<li><a class="reference internal" href="#section-18">6.3</a></li>
+<li><a class="reference internal" href="#section-19">6.2</a></li>
+<li><a class="reference internal" href="#section-20">6.1</a></li>
+<li><a class="reference internal" href="#section-21">6.0</a></li>
+<li><a class="reference internal" href="#section-22">5.6</a></li>
+<li><a class="reference internal" href="#section-23">5.5</a></li>
+<li><a class="reference internal" href="#section-24">5.4</a></li>
+<li><a class="reference internal" href="#section-25">5.3</a></li>
+<li><a class="reference internal" href="#section-26">5.2</a></li>
+<li><a class="reference internal" href="#section-27">5.1</a></li>
+<li><a class="reference internal" href="#section-28">5.0</a></li>
+<li><a class="reference internal" href="#section-29">4.9</a></li>
+<li><a class="reference internal" href="#section-30">4.7</a></li>
+<li><a class="reference internal" href="#section-31">4.6</a></li>
+<li><a class="reference internal" href="#section-32">4.5</a></li>
+<li><a class="reference internal" href="#section-33">4.4</a></li>
+<li><a class="reference internal" href="#section-34">4.3</a></li>
+<li><a class="reference internal" href="#section-35">4.2</a></li>
+<li><a class="reference internal" href="#section-36">4.1</a></li>
+<li><a class="reference internal" href="#section-37">4.0</a></li>
+<li><a class="reference internal" href="#section-38">3.14</a></li>
+<li><a class="reference internal" href="#section-39">3.13</a></li>
+<li><a class="reference internal" href="#section-40">3.12</a></li>
+<li><a class="reference internal" href="#section-41">3.11</a></li>
+<li><a class="reference internal" href="#section-42">3.10</a></li>
+<li><a class="reference internal" href="#section-43">3.9</a></li>
+<li><a class="reference internal" href="#section-44">3.8</a></li>
+<li><a class="reference internal" href="#section-45">3.7</a></li>
+<li><a class="reference internal" href="#section-46">3.6</a></li>
+<li><a class="reference internal" href="#section-47">3.5</a></li>
+<li><a class="reference internal" href="#section-48">3.4</a></li>
+<li><a class="reference internal" href="#section-49">3.3</a></li>
+<li><a class="reference internal" href="#section-50">3.2</a></li>
+<li><a class="reference internal" href="#section-51">3.1</a></li>
+<li><a class="reference internal" href="#section-52">3.0</a></li>
+<li><a class="reference internal" href="#section-53">2.1</a></li>
+<li><a class="reference internal" href="#section-54">2.0</a></li>
+<li><a class="reference internal" href="#section-55">1.6</a></li>
+<li><a class="reference internal" href="#section-56">1.5</a></li>
+<li><a class="reference internal" href="#section-57">1.4</a></li>
+<li><a class="reference internal" href="#section-58">1.3</a></li>
+<li><a class="reference internal" href="#section-59">1.2</a></li>
+<li><a class="reference internal" href="#section-60">1.1</a></li>
+<li><a class="reference internal" href="#section-61">1.0</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="reference.html"
+                        title="previous chapter">Library reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="next chapter">Install</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/news.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="Install"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reference.html" title="Library reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyderasn 9.3 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2022, Sergey Matveev.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

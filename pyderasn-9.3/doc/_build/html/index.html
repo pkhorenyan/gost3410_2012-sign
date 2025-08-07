@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PyDERASN – strict and fast ASN.1 DER/CER/BER library for Python &#8212; pyderasn 9.3 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Features" href="features.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="features.html" title="Features"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">pyderasn 9.3 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pyderasn-strict-and-fast-asn-1-der-cer-ber-library-for-python">
+<h1>PyDERASN – strict and fast ASN.1 DER/CER/BER library for Python<a class="headerlink" href="#pyderasn-strict-and-fast-asn-1-der-cer-ber-library-for-python" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>I’m going to build my own ASN.1 library with slots and blobs!
+(C) PyDERASN’s author</div></blockquote>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/ASN.1">ASN.1</a> (Abstract Syntax
+Notation One) is a standard for abstract data serialization. PyDERASN is
+yet another library for dealing with ASN.1 structures, decoding them in
+<a class="reference external" href="https://en.wikipedia.org/wiki/X.690">BER/CER/DER</a> formats and
+encoding to either DER (Distinguished Encoding Rules) or CER (Canonical
+Encoding Rules). Although ASN.1 is written more than 30 years ago by wise
+Ancients (taken from <code class="docutils literal"><span class="pre">pyasn1</span></code>’s README), it is still often can be seen
+anywhere in our life.</p>
+<p>PyDERASN is <a class="reference external" href="https://www.gnu.org/philosophy/free-sw.html">free software</a>,
+licenced under <a class="reference external" href="https://www.gnu.org/licenses/lgpl-3.0.html">GNU LGPLv3</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Library reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Thanks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feedback.html">Feedback</a></li>
+</ul>
+</div>
+<p>There are articles about its history and usage:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://m.habr.com/ru/post/444272/">Как я написал ASN.1 библиотеку с slots and blobs</a> (on russian)</li>
+<li><a class="reference external" href="https://m.habr.com/ru/post/498014/">Как я добавил big-data поддержку</a> (on russian)</li>
+</ul>
+<div class="figure" id="figure-1">
+<img alt="Pretty printing example output" src="pprinting.png" />
+<p class="caption"><span class="caption-text">An example of pretty printed X.509 certificate with automatically
+parsed DEFINED BY fields.</span></p>
+</div>
+<div class="figure" id="figure-2">
+<img alt="ASN.1 browser example" src="browser.png" />
+<p class="caption"><span class="caption-text">An example of browser running.</span></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="features.html"
+                        title="next chapter">Features</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="features.html" title="Features"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">pyderasn 9.3 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2022, Sergey Matveev.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

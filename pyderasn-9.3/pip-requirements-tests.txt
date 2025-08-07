@@ -1,0 +1,4 @@
+attrs==19.3.0
+coverage==4.5.4
+hypothesis==6.39.4
+python-dateutil==2.8.1

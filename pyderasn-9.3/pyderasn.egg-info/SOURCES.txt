@@ -1,0 +1,16 @@
+AUTHORS
+COPYING
+COPYING.LESSER
+README
+pyderasn.py
+setup.py
+pyderasn.egg-info/PKG-INFO
+pyderasn.egg-info/SOURCES.txt
+pyderasn.egg-info/dependency_links.txt
+pyderasn.egg-info/requires.txt
+pyderasn.egg-info/top_level.txt
+tests/test_cms.py
+tests/test_compli.py
+tests/test_crl.py
+tests/test_crts.py
+tests/test_pyderasn.py

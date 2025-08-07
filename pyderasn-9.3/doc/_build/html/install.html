@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Install &#8212; pyderasn 9.3 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Download" href="download.html" />
+    <link rel="prev" title="News" href="news.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="download.html" title="Download"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="news.html" title="News"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyderasn 9.3 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p>Preferable way is to <a class="reference internal" href="download.html#download"><span class="std std-ref">download</span></a> tarball with the
+signature from <a class="reference external" href="http://www.pyderasn.cypherpunks.ru/">official website</a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ [fetch|wget] http://www.pyderasn.cypherpunks.ru/download/pyderasn-9.3.tar.zst
+$ [fetch|wget] http://www.pyderasn.cypherpunks.ru/download/pyderasn-9.3.tar.zst.sig
+$ gpg --verify pyderasn-9.3.tar.zst.sig pyderasn-9.3.tar.zst
+$ zstd -d &lt; pyderasn-9.3.tar.zst | tar xf -
+$ cd pyderasn-9.3
+$ python setup.py install
+# or copy pyderasn.py (possibly termcolor.py) to your PYTHONPATH
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">termcolor</span></code> is an optional dependency used for output colourizing.</li>
+<li><code class="docutils literal"><span class="pre">urwid</span></code> is an optional dependency used for <a class="reference internal" href="reference.html#browser"><span class="std std-ref">interactive browser</span></a>.</li>
+<li><code class="docutils literal"><span class="pre">dateutil</span></code> is an optional dependency used for <code class="docutils literal"><span class="pre">.totzdatetime()</span></code> method.</li>
+</ul>
+<p>You could use pip (<strong>no</strong> OpenPGP authentication is performed!) with PyPI:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ echo pyderasn==9.3 --hash=sha256:TO-BE-FILLED &gt; requirements.txt
+$ pip install --requirement requirements.txt
+</pre></div>
+</div>
+<p>You have to verify downloaded tarballs integrity and authenticity to be
+sure that you retrieved trusted and untampered software. <a class="reference external" href="https://www.gnupg.org/">GNU Privacy
+Guard</a> is used for that purpose.</p>
+<p>For the very first time it is necessary to get signing public key and
+import it. It is provided below, but you should check alternative
+resources.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>pub   rsa2048/0x04A933D1BA20327A 2017-09-20
+      2ED6 C846 3051 02DF 5B4E  0383 04A9 33D1 BA20 327A
+uid   PyDERASN releases &lt;pyderasn@cypherpunks.ru&gt;
+
+$ gpg --auto-key-locate dane --locate-keys pyderasn at cypherpunks dot ru
+$ gpg --auto-key-locate wkd --locate-keys pyderasn at cypherpunks dot ru
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">PGP</span> <span class="n">PUBLIC</span> <span class="n">KEY</span> <span class="n">BLOCK</span><span class="o">-----</span>
+
+<span class="n">mQENBFnCv</span><span class="o">/</span><span class="n">YBCAC8TD</span><span class="o">+</span><span class="n">EhE5qDTwHj25OKer4baCpvIMgGYprAmwiUkVq0Wq38on</span><span class="o">/</span>
+<span class="n">xszHcKcLShApVQXfx32bx</span><span class="o">+</span><span class="n">laXdokv1BAPJygrbAo3ocwuo</span><span class="o">/</span><span class="n">tBDNlqQ1Tm9vdAhz9</span>
+<span class="mi">8</span><span class="n">S6B7UTLsyO4WkhC9h6wHPMEG4VuSxyHwF</span><span class="o">+</span><span class="n">lg5wcbDIHZRn029UctYSjdBXYL</span><span class="o">/</span><span class="n">YL</span>
+<span class="n">kPfywzLW6sB7FdDWv2Eb7SosTGz9T4kgco3a8cqUbtroawRmXw</span><span class="o">+</span><span class="n">AdyPDsxKf2fMP</span>
+<span class="n">xpBHhPQvWCnd294keJJ7EiqM11u9f0yRfSotVJU6UHETTgtdPwtP19RLfEqFUWUc</span>
+<span class="n">ZYTq2da1cAzBuseczZXbLk01njg0io2YPB0BABEBAAG0K1B5REVSQVNOIHJlbGVh</span>
+<span class="n">c2VzIDxweWRlcmFzbkBjeXBoZXJwdW5rcy5ydT6JAVcEEwEIAEEWIQQu1shGMFEC</span>
+<span class="mi">31</span><span class="n">tOA4MEqTPRuiAyegUCWcK</span><span class="o">/</span><span class="mi">9</span><span class="n">gIbAwwLCgkNCAwHCwMEAQIHFQoJCAsDAgUWAgED</span>
+<span class="n">AAIeAQIXgAAKCRAEqTPRuiAyelKFCACAM</span><span class="o">/</span><span class="n">hmkkjGDcZn9zRma717CrRr84LrbdOF</span>
+<span class="n">EfS</span><span class="o">+</span><span class="n">cWwcLpqeI3YmGPBW6hP94MnZuVcUJIVIhZ1C1</span><span class="o">/</span><span class="n">DHP32u3xDW0uj2VXwBLCQt</span>
+<span class="n">k9regkGOYVMW0l</span><span class="o">+</span><span class="n">MKY4Z81KgJSfX</span><span class="o">+</span><span class="n">kOq8RfLW0sq1bf91a</span><span class="o">/</span><span class="n">id8u</span><span class="o">/</span><span class="n">IEsyPHN34XLI</span>
+<span class="n">kptAFf6b0Wl6VU7nJiie25XI8DaYX98q7tYoD5yOSxzcCJ4IRAbAKg1B5RNTTZuG</span>
+<span class="n">y8RmHsszF3sJ5wLuGk1vpSh1jgq61RUquQYJa1iE2B8fxpL6Qr</span><span class="o">+</span><span class="n">T8IR2Jan4TFIn</span>
+<span class="n">vzGeBXtCD2yUIeJgSeF</span><span class="o">/</span><span class="mi">3</span><span class="n">VoEq8lxJ</span><span class="o">+</span><span class="n">rwHwcsIqHF7QdqJCc7S0wviHUEEBEIAB0W</span>
+<span class="n">IQTPYOiaWSMeduJjZCKuGoEJ5JhX7wUCWcLAIAAKCRCuGoEJ5JhX7</span><span class="o">+</span><span class="n">lbAP9</span><span class="o">+</span><span class="n">WNA4</span>
+<span class="n">Uk0pNH5BAASabuT</span><span class="o">+</span><span class="n">zllnHZ5SqZoKWbs7bzWfogD</span><span class="o">+</span><span class="n">NWmjTfSJCr7GSZ4Suy3Vw4nn</span>
+<span class="n">hUu3L6dceWUU</span><span class="o">+</span><span class="n">hAEOBw</span><span class="o">=</span>
+<span class="o">=</span><span class="n">Qodb</span>
+<span class="o">-----</span><span class="n">END</span> <span class="n">PGP</span> <span class="n">PUBLIC</span> <span class="n">KEY</span> <span class="n">BLOCK</span><span class="o">-----</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="news.html"
+                        title="previous chapter">News</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="download.html"
+                        title="next chapter">Download</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/install.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="download.html" title="Download"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="news.html" title="News"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyderasn 9.3 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2022, Sergey Matveev.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
