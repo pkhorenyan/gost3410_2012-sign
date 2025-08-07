@@ -3,8 +3,6 @@ from pygost import gost34112012
 from pygost.gost3410 import verify, CURVES
 from pygost.utils import hexenc
 from asn1crypto import cms
-import gostcrypto
-
 
 def parse_gost_signature(signature_bytes):
     sig_len = len(signature_bytes)
