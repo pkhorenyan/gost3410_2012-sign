@@ -40,8 +40,18 @@ def extract_public_key(filepath):
 
     cert, _ = x509.Certificate().decode(cert_bytes)
     pubkey = bytes(cert["tbsCertificate"]["subjectPublicKeyInfo"]["subjectPublicKey"])
-
+    print(len(pubkey))
     print(f'pubkey_byte: {pubkey}')
+
+    if pubkey[0] == 0x04 and len(pubkey) == 66:
+        pubkey = pubkey[2:]
+    if pubkey[0] == 0x04 and len(pubkey) == 65:
+        pubkey = pubkey[1:]
+    else:
+        pubkey = pubkey
+
+    print(len(pubkey))
+    print(f'pubkey_byte_edited: {pubkey}')
     print("Публичный ключ (hex):", hexenc(pubkey))
     x, y = pubkey[:32], pubkey[32:]
     print(f'x_byte: {x}')
@@ -99,11 +109,13 @@ if __name__ == '__main__':
     # Проверяем подпись
     curve = CURVES["id-tc26-gost-3410-2012-256-paramSetA"]
 
-    # print(len(x))
-    # print(len(y))
+    print(len(x))
+    print(len(y))
 
     pub_key = (int.from_bytes(x, "little"), int.from_bytes(y, "little"))
-    signature = (int.from_bytes(r, "little"), int.from_bytes(s, "little"))
+    # signature = (int.from_bytes(r, "little"), int.from_bytes(s, "little"))
+
+    signature = r + s
 
     # pub_key = (x,y)
     # signature = (r,s)
