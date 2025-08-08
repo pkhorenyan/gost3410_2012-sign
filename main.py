@@ -88,12 +88,11 @@ def hash_file(filename):
     # Вычисляем хэш файла
     with open(filename, "rb") as f:
         file_data = f.read()
-    hash_obj = gost34112012.GOST34112012(digest_size=256)
+    hash_obj = gost34112012.GOST34112012(digest_size=32)
     hash_obj.update(file_data)
     message_hash = hash_obj.digest()
 
     return message_hash
-
 
 if __name__ == '__main__':
     main_file = "file.pdf"
@@ -104,7 +103,9 @@ if __name__ == '__main__':
     x,y = extract_public_key("extracted_cert.cer")
     print("_" * 100)
     r,s = extract_r_s(signature_file)
-    message_hash = hash_file(main_file)
+
+    digest = hash_file(main_file)
+    print(f"Digest (hex): {digest.hex().upper()}")
 
     # Проверяем подпись
     curve = CURVES["id-tc26-gost-3410-2012-256-paramSetA"]
@@ -112,14 +113,12 @@ if __name__ == '__main__':
     print(len(x))
     print(len(y))
 
-    pub_key = (int.from_bytes(x, "little"), int.from_bytes(y, "little"))
-    # signature = (int.from_bytes(r, "little"), int.from_bytes(s, "little"))
+    print(len(r))
+    print(len(s))
 
+    pub_key = (int.from_bytes(x, "little"), int.from_bytes(y, "little"))
     signature = r + s
 
-    # pub_key = (x,y)
-    # signature = (r,s)
-
-    is_valid = verify(curve, pub_key, message_hash, signature)
+    is_valid = verify(curve, pub_key, digest, signature)
 
     print("✅ Подпись верна!" if is_valid else "❌ Подпись недействительна!")
